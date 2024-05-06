@@ -13,6 +13,15 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	messages: [
+		{
+			textContent: String,
+			timeStamp: {
+				type: Date,
+				default: Date.now,
+			},
+		},
+	],
 })
 
 module.exports = mongoose.model('user', userSchema)
